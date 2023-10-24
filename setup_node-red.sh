@@ -6,6 +6,12 @@ if [ "$EUID" -ne 0 ]
   exit
 fi
 
+# Install Node.js and npm
+apt install nodejs npm
+
+# Install Node-Red
+npm install -g --unsafe-perm node-red
+
 # Create the Node-RED service unit file
 echo "[Unit]
 Description=Node-Red
