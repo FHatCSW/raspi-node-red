@@ -21,11 +21,11 @@ run_pkcs11_tool() {
   local result
   result=$(pkcs11-tool --module "$PKCS11_MODULE" --list-slots --pin "$pwd" 2>&1)
 
-  result_first=$result | awk '{print $1;}'
+  set -- result
+  echo $1
 
-  echo $result_first
 
-  if [[ result_first == *"error:"* ]]; then
+  if [[ $1 == *"error:"* ]]; then
     echo "Type $pwd is incorrect."
   else
     echo "Type $pwd is correct. Stopping."
