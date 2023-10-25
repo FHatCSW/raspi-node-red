@@ -22,20 +22,17 @@ run_pkcs11_tool() {
   result=$(pkcs11-tool --module "$PKCS11_MODULE" --list-slots --pin "$pwd" 2>&1)
 
   set -- $result
-  echo $1
-
 
   if [[ $1 == *"error:"* ]]; then
-    echo "Type $pwd is incorrect."
+    echo "PIN >$pwd< is incorrect."
   else
-    echo "Type $pwd is correct. Stopping."
+    echo "PIN >$pwd< is correct. Stopping."
     exit 0
   fi
 }
 
 # Read the types from the file and loop through them
 while read PWD; do
-  echo "Trying PKCS11 pwd: $PWD"
   run_pkcs11_tool "$PWD"
 done <pwd.txt
 
