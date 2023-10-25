@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Define the PKCS11 module and PIN
-PKCS11_MODULE="/path/to/pkcs11/module.so"
+PKCS11_MODULE="/usr/lib/opensc-pkcs11.so"
 
 # URL of the text file containing PKCS11 types
 PWD_URL="https://raw.githubusercontent.com/danielmiessler/SecLists/master/Passwords/Common-Credentials/best15.txt"
