@@ -4,7 +4,7 @@
 PKCS11_MODULE="/path/to/pkcs11/module.so"
 
 # URL of the text file containing PKCS11 types
-PWD_URL="https://github.com/danielmiessler/SecLists/raw/master/Passwords/Common-Credentials/best15.txt"
+PWD_URL="https://raw.githubusercontent.com/danielmiessler/SecLists/master/Passwords/Common-Credentials/best15.txt"
 
 # Download the types file
 curl -s -o pwd.txt "$PWD_URL"
