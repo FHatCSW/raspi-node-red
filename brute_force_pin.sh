@@ -21,7 +21,9 @@ run_pkcs11_tool() {
   local result
   result=$(pkcs11-tool --module "$PKCS11_MODULE" --list-slots --pin "$pwd" 2>&1)
 
-  if [[ $result == *"error: PKCS11 function C_Login failed: rv = CKR_PIN_INCORRECT (0xa0)"* ]]; then
+  echo $result
+
+  if [[ $result == *"CKR_PIN_INCORRECT"* ]]; then
     echo "Type $pwd is incorrect."
   else
     echo "Type $pwd is correct. Stopping."
