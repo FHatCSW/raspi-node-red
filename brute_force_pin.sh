@@ -30,10 +30,10 @@ run_pkcs11_tool() {
 }
 
 # Read the types from the file and loop through them
-while IFS= read -r PWD; do
-  echo "Trying PKCS11 type: $PWD"
+while read PWD; do
+  echo "Trying PKCS11 pwd: $PWD"
   run_pkcs11_tool "$PWD"
-done < "pwd.txt"
+done <pwd.txt
 
 echo "All types tested, but no correct type found."
 
