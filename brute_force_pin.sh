@@ -4,7 +4,7 @@
 PKCS11_MODULE="/usr/lib/opensc-pkcs11.so"
 
 # URL of the text file containing PKCS11 types
-PWD_URL="https://raw.githubusercontent.com/danielmiessler/SecLists/master/Passwords/Common-Credentials/best1050.txt"
+PWD_URL="https://raw.githubusercontent.com/danielmiessler/SecLists/master/Passwords/Common-Credentials/10-million-password-list-top-1000.txt"
 
 # Download the types file
 curl -s -o pwd.txt "$PWD_URL"
@@ -22,8 +22,6 @@ run_pkcs11_tool() {
   result=$(pkcs11-tool --module "$PKCS11_MODULE" --list-slots --pin "$pwd" 2>&1)
 
   set -- $result
-
-  echo ">$1<"
 
   if [[ $1 == *"error:"* ]]; then
     echo "PIN >$pwd< is incorrect."
