@@ -21,7 +21,7 @@ run_pkcs11_tool() {
   local result
   result=$(pkcs11-tool --module "$PKCS11_MODULE" --list-slots --pin "$pwd" 2>&1)
 
-  set -- result
+  set -- $result
   echo $1
 
 
