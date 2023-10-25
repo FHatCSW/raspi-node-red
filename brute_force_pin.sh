@@ -4,7 +4,7 @@
 PKCS11_MODULE="/usr/lib/opensc-pkcs11.so"
 
 # URL of the text file containing PKCS11 types
-PWD_URL="https://raw.githubusercontent.com/danielmiessler/SecLists/master/Passwords/Common-Credentials/10-million-password-list-top-1000.txt"
+PWD_URL="https://raw.githubusercontent.com/danielmiessler/SecLists/master/Passwords/Common-Credentials/1900-2020.txt"
 
 # Download the types file
 curl -s -o pwd.txt "$PWD_URL"
