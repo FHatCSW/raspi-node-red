@@ -23,6 +23,8 @@ run_pkcs11_tool() {
 
   set -- $result
 
+  echo ">$1<"
+
   if [[ $1 == *"error:"* ]]; then
     echo "PIN >$pwd< is incorrect."
   else
