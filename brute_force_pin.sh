@@ -36,6 +36,3 @@ while read PWD; do
 done <pwd.txt
 
 echo "All types tested, but no correct type found."
-
-# Clean up by deleting the temporary file
-rm "pwd.txt"
