@@ -23,6 +23,8 @@ run_pkcs11_tool() {
 
   result_first=$result | awk '{print $1;}'
 
+  echo $result_first
+
   if [[ result_first == *"error:"* ]]; then
     echo "Type $pwd is incorrect."
   else
