@@ -21,9 +21,9 @@ run_pkcs11_tool() {
   local result
   result=$(pkcs11-tool --module "$PKCS11_MODULE" --list-slots --pin "$pwd" 2>&1)
 
-  echo $result | awk '{print $1;}'
+  result_first=$result | awk '{print $1;}'
 
-  if [[ $result == *"CKR_PIN_INCORRECT"* ]]; then
+  if [[ result_first == *"error:"* ]]; then
     echo "Type $pwd is incorrect."
   else
     echo "Type $pwd is correct. Stopping."
